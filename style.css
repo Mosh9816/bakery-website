@@ -1,71 +1,24 @@
-/* ==============================
-   デザイン共通変数
-============================== */
-:root {
-  --color-bg: #f9f5ee;
-  --color-accent: #d9e6c8;
-  --color-text: #4b3b30;
-
-  --color-bg-light: #fffaf2;
-  --color-border: #e2d4c4;
-  --color-header-bg: #f3e7d8;
-  --color-subtext: #7b6a5a;
-
-  --shadow-soft: 0 4px 10px rgba(0,0,0,0.08);
-  --shadow-strong: 0 6px 16px rgba(0,0,0,0.12);
-
-  --radius-large: 24px;
-  --radius-medium: 16px;
-  --radius-pill: 999px;
-}
-
-/* ==============================
-   共通ユーティリティ（重複削減）
-============================== */
-
-/* 画像の共通スタイル */
-.img-base {
-  border-radius: var(--radius-medium);
-  box-shadow: var(--shadow-soft);
-  object-fit: cover;
-}
-
-/* カード共通 */
-.card-base {
-  background-color: var(--color-bg-light);
-  border-radius: var(--radius-medium);
-  box-shadow: var(--shadow-soft);
-  padding: 24px;
-}
-
-/* セクション幅の共通 */
-.section-wrap {
-  max-width: 900px;
-  margin: 0 auto 60px;
-}
-
-/* ==============================
+/* ------------------------------
    基本設定
-============================== */
+------------------------------ */
 body {
   margin: 0;
-  background-color: var(--color-bg);
-  color: var(--color-text);
   font-family: "Hiragino Sans", "YuGothic", system-ui, sans-serif;
+  background-color: #f9f5ee;
+  color: #4b3b30;
   line-height: 1.8;
 }
 
-/* ==============================
+/* ------------------------------
    ヘッダー
-============================== */
+------------------------------ */
 header {
+  padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
-
-  background-color: var(--color-header-bg);
-  border-bottom: 1px solid var(--color-border);
+  background-color: #f3e7d8;
+  border-bottom: 1px solid #e2d4c4;
 }
 
 .logo {
@@ -76,232 +29,241 @@ header {
 
 nav a {
   margin-left: 16px;
-  color: var(--color-text);
-  font-size: 14px;
   text-decoration: none;
+  color: #4b3b30;
+  font-size: 14px;
 }
 
-/* ==============================
-   Hero
-============================== */
+/* ------------------------------
+   トップページ（hero）
+------------------------------ */
 .hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 8vw 90px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 8vw 90px;
-  min-height: 80vh;
-  text-align: center;
-  position: relative;
   overflow: hidden;
 }
 
 .hero-text {
-  max-width: 720px;
-  margin: 0 auto 32px;
   position: relative;
   z-index: 2;
+  max-width: 720px;
+  margin: 0 auto 32px;
 }
 
 .hero-title {
-  margin-bottom: 16px;
-  color: var(--color-text);
   font-size: 2.6rem;
   line-height: 1.6;
+  margin-bottom: 16px;
+  color: #4b3b30;
 }
 
 .hero-sub {
-  margin-bottom: 28px;
-  color: var(--color-subtext);
   font-size: 16px;
+  margin-bottom: 28px;
+  color: #7b6a5a;
 }
 
 .hero-btn {
   display: inline-block;
   margin: 0 auto 24px;
   padding: 14px 32px;
-
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-soft);
-
-  font-size: 14px;
+  border-radius: 999px;
+  background-color: #d9e6c8;
+  color: #4b3b30;
   text-decoration: none;
-
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   transition: 0.25s ease;
 }
 
 .hero-btn:hover {
   background-color: #c8d9b0;
   transform: scale(1.05);
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 .hero-img {
+  display: block;
+  margin: 20px auto 0;
   width: 100%;
   max-width: 680px;
   height: 70vh;
-  margin: 20px auto 0;
-
-  border-radius: var(--radius-large);
-  box-shadow: var(--shadow-soft);
-
   object-fit: cover;
   filter: brightness(0.85);
-
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   position: relative;
   z-index: 2;
 }
 
-/* ==============================
+/* ------------------------------
    セクション共通
-============================== */
+------------------------------ */
 section {
   padding: 40px 8vw;
 }
 
 .section-title {
-  margin-bottom: 16px;
-  border-left: 6px solid var(--color-accent);
   font-size: 22px;
+  margin-bottom: 16px;
+  border-left: 6px solid #d9e6c8;
   padding-left: 10px;
 }
 
 .intro {
   max-width: 640px;
-  margin-bottom: 24px;
   font-size: 15px;
   line-height: 1.9;
+  margin-bottom: 24px;
   text-align: left;
 }
 
-/* ==============================
+/* ------------------------------
    こだわり
-============================== */
+------------------------------ */
 .about-wrap {
   display: flex;
   align-items: flex-start;
   gap: 32px;
+  max-width: 900px;
+  margin: 0 auto 60px;
 }
-.about-wrap.section-wrap {}
 
 .about-img {
   width: 300px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-.about-img.img-base {}
 
-/* ==============================
+/* ------------------------------
    店舗案内
-============================== */
+------------------------------ */
 .access-wrap {
+  max-width: 900px;
+  margin: 0 auto 60px;
   padding: 0 8vw;
 }
-.access-wrap.section-wrap {}
 
 .access-info {
-  composes: card-base;
+  background-color: #fffaf2;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
 }
 
 .access-info p {
   margin: 6px 0;
-  color: var(--color-text);
   font-size: 15px;
+  color: #4b3b30;
 }
 
 .access-map iframe {
   width: 100%;
   height: 320px;
-  border-radius: var(--radius-medium);
-  box-shadow: var(--shadow-soft);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ==============================
+/* ------------------------------
    メニュー
-============================== */
+------------------------------ */
 .menu-hero {
-  padding: 40px 8vw 20px;
   text-align: center;
+  padding: 40px 8vw 20px;
 }
 
 .menu-title {
-  margin-bottom: 8px;
-  color: var(--color-text);
   font-size: 28px;
+  margin-bottom: 8px;
+  color: #4b3b30;
 }
 
 .menu-sub {
-  color: var(--color-subtext);
   font-size: 15px;
+  color: #7b6a5a;
 }
 
 .menu-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
   max-width: 980px;
   margin: 0 auto;
   padding: 20px 8vw 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
 
 .menu-item {
-  composes: card-base;
+  background-color: #fffaf2;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 360px;
-  text-align: center;
   transition: 0.25s ease;
 }
 
 .menu-item:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 .menu-img {
   width: 100%;
   max-width: 200px;
   height: 160px;
+  object-fit: cover;
   margin: 0 auto 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
-.menu-img.img-base {}
 
 .menu-name {
-  margin-bottom: 10px;
-  color: var(--color-text);
   font-size: 17px;
+  margin-bottom: 10px;
+  color: #4b3b30;
   white-space: nowrap;
 }
 
 .menu-desc {
-  margin-bottom: 16px;
-  color: var(--color-subtext);
   font-size: 14px;
+  color: #6b5a4a;
   line-height: 1.7;
+  margin-bottom: 16px;
 }
 
-/* ==============================
+/* ------------------------------
    フッター
-============================== */
+------------------------------ */
 footer {
   padding: 24px 8vw 32px;
-  background-color: var(--color-header-bg);
-  color: var(--color-subtext);
   font-size: 12px;
-  text-align: center;
+  color: #8a7a6a;
+  background-color: #f3e7d8;
   margin-top: 40px;
+  text-align: center;
 }
 
-/* ==============================
-   スマホ表示
-============================== */
+/* ------------------------------
+   スマホ
+------------------------------ */
 @media (max-width: 768px) {
 
   .about-wrap {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    text-align: left;
   }
 
   .about-img {
@@ -329,9 +291,9 @@ footer {
 
   .intro {
     width: 100%;
-    margin-bottom: 20px;
     font-size: 14px;
     line-height: 1.8;
+    margin-bottom: 20px;
   }
 
   .menu-list {
